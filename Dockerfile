@@ -31,7 +31,7 @@ RUN apt-get install -y wkhtmltopdf
 
 USER frappe
 WORKDIR /home/frappe
-RUN git clone -b master https://github.com/frappe/bench.git bench-repo
+RUN git clone https://github.com/frappe/bench bench-repo --single-branch -b master --depth=1
 
 USER root
 RUN pip install -e bench-repo
